@@ -15,6 +15,10 @@ distributions {
                 include 'scripts/**'
             }
 
+            from(srcDir) {
+                include 'modlist.html'
+            }
+
             into '/'
         }
     }

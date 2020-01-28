@@ -101,3 +101,6 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/gradle,eclipse,visualstudiocode
+
+/manifest.json
+/modlist.html
