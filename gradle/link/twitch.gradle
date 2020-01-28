@@ -1,0 +1,47 @@
+apply from: "${gradleDir}/functions.gradle"
+
+def root = file("${System.properties['user.home']}/Documents")
+def td = file("${root}/Twitch")
+def dir = file("${root}/Curse")
+
+if (td.exists()) {
+    dir = td
+}
+
+if (!dir.exists()) {
+    root = file("${System.properties['user.home']}")
+    td = file("${root}/Twitch")
+    dir = file("${root}/Curse")
+
+    if (td.exists()) {
+        dir = td
+    }
+}
+
+dir = file("${dir}/Minecraft")
+
+ext {
+    twitchDir = file("${dir}")
+    twitchInstancesDir = file("${twitchDir}/instances")
+    twitchInstanceDir = file("${twitchInstancesDir}/${project.name}")
+    twitchMcDir = file("${twitchInstanceDir}")
+}
+
+task linkTwitchDirs() {
+    mkdir twitchMcDir
+
+    def dirs = [
+        'config',
+        'mods',
+        'resources',
+        'resourcepacks',
+        'saves',
+        'scripts'
+    ]
+
+    doLast {
+        dirs.each {
+            link("${twitchMcDir}/${it}", "${srcDir}/${it}")
+        }
+    }
+}

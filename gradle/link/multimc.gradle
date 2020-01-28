@@ -1,0 +1,29 @@
+apply from: "${gradleDir}/functions.gradle"
+
+ext {
+    mmcDir = file("${System.properties['user.home']}/scoop/apps/multimc/current")
+    mmcInstancesDir = file("${mmcDir}/instances")
+    mmcInstanceDir = file("${mmcInstancesDir}/${project.name}")
+    mmcMcDir = file("${mmcInstanceDir}/.minecraft")
+}
+
+task linkMultimcDirs() {
+    if (!file(mmcMcDir).exists()) {
+        mkdir mmcMcDir
+    }
+
+    def dirs = [
+        'config',
+        'mods',
+        'resources',
+        'resourcepacks',
+        'saves',
+        'scripts'
+    ]
+
+    doLast {
+        dirs.each {
+            link("${mmcMcDir}/${it}", "${srcDir}/${it}")
+        }
+    }
+}

@@ -1,0 +1,12 @@
+
+distributions {
+    mods {
+        contents {
+            from (modsDir) {
+                include '**'
+                into 'mods'
+            }
+            into '/'
+        }
+    }
+}

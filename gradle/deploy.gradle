@@ -1,0 +1,2 @@
+apply from: "${deployDir}/dev.gradle"
+apply from: "${deployDir}/prod.gradle"

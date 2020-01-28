@@ -1,0 +1,35 @@
+{
+  "recipeName": "Luck of the Sea 1",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:35}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "rabbit_foot"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:61}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 5,
+  "showRecipe": true
+}

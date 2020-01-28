@@ -1,0 +1,32 @@
+{
+  "recipeName": "Infinity",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "book"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "arrow"
+    },
+    "count": 64,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:51}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 13,
+  "showRecipe": true
+}

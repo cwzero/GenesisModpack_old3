@@ -1,0 +1,29 @@
+apply from: "${linkDir}/twitch.gradle"
+apply from: "${packDir}/manifest.gradle"
+
+distributions {
+    main {
+        contents {
+            from (buildDir) {
+                include 'manifest.json'
+            }
+
+            from (srcDir) {
+                into 'overrides'
+                include 'config/**'
+                include 'resources/**'
+                include 'scripts/**'
+            }
+
+            into '/'
+        }
+    }
+}
+
+installDist.dependsOn generateTwitchManifest
+distZip.dependsOn generateTwitchManifest
+distTar.dependsOn generateTwitchManifest
+
+distTar {
+    compression = Compression.GZIP
+}

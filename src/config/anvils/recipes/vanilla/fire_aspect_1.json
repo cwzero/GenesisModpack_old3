@@ -1,0 +1,35 @@
+{
+  "recipeName": "Fire Aspect 1",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:16}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "blaze_powder"
+    },
+    "count": 3,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:20}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 4,
+  "showRecipe": true
+}

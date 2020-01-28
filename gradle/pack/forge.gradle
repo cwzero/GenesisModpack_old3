@@ -1,0 +1,53 @@
+task cleanInstaller(type: Delete) {
+    doLast {
+        delete forgeDir
+    }
+}
+
+task copyInstaller(type: Copy) {
+    mustRunAfter cleanInstaller
+    mkdir forgeDir
+    from configurations.forge
+    into forgeDir
+
+
+    inputs.files("${srcDir}/manifest.json")
+    outputs.files("${buildDir}/forge/${configurations.forge.singleFile.name}")
+}
+
+task installForge(type: Exec) {
+    dependsOn copyInstaller
+    workingDir forgeDir
+    commandLine 'java', '-jar', configurations.forge.singleFile.name, '--installServer'
+
+    inputs.files("${srcDir}/manifest.json")
+    outputs.files("${buildDir}/forge/forge-${minecraft.version}-${forge.version}-universal.jar")
+}
+
+task cleanInstall(type: Delete) {
+    dependsOn installForge
+
+    def jarFile = file("${forgeDir}/${configurations.forge.singleFile.name}")
+    def logFile = file("${jarFile}.log")
+
+    delete jarFile, logFile
+
+    onlyIf { jarFile.exists() || logFile.exists() }
+}
+
+distributions {
+    forge {
+        contents {
+            from forgeDir
+            into '/'
+        }
+    }
+}
+
+installForgeDist.dependsOn cleanInstall
+forgeDistZip.dependsOn cleanInstall
+forgeDistTar.dependsOn cleanInstall
+
+forgeDistTar {
+    compression = Compression.GZIP
+}

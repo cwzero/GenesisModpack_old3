@@ -1,0 +1,32 @@
+{
+  "recipeName": "Curse of Binding",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "book"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "chorus_fruit"
+    },
+    "count": 8,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:10}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 10,
+  "showRecipe": true
+}

@@ -1,0 +1,53 @@
+apply from: "${linkDir}/multimc.gradle"
+
+task generateInstanceCfg() {
+    def instanceCfgFile = file("${buildDir}/instance.cfg")
+
+    doLast {
+        instanceCfgFile.text = """
+InstanceType=OneSix
+name=${project.name}
+iconKey=default
+MinMemAlloc=${minMemory}
+MaxMemAlloc=${maxMemory}
+OverrideMemory=true
+        """
+    }
+}
+
+task copyInstanceCfg(type: Copy) {
+    dependsOn generateInstanceCfg
+    from buildDir
+    include "instance.cfg"
+    into mmcInstanceDir
+}
+
+task generatePackMmc() {
+    def packMmcFile = file("${buildDir}/mmc-pack.json")
+
+    doLast {
+        packMmcFile.text = """
+{
+    "components": [
+        {
+            "important": true,
+            "uid": "net.minecraft",
+            "version": "${minecraft.version}"
+        },
+        {
+            "uid": "net.minecraftforge",
+            "version": "${forge.version}"
+        }
+    ],
+    "formatVersion": 1
+}
+        """
+    }
+}
+
+task copyPackMmc(type: Copy) {
+    dependsOn generatePackMmc
+    from buildDir
+    include "mmc-pack.json"
+    into mmcInstanceDir
+}

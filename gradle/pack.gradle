@@ -1,0 +1,31 @@
+ext {
+    author = "gjerdeeric"
+    
+    linkDir = "${gradleDir}/link/"
+    minecraftDir = "${gradleDir}/minecraft/"
+    packDir = "${gradleDir}/pack/"
+    runDir = "${gradleDir}/run/"
+    gitDir = "${projectDir}"
+    srcDir = "${gitDir}/src"
+    buildDir = "${buildDir}"
+    deployDir = "${gradleDir}/deploy/"
+    modsDir = "${srcDir}/mods"
+    serverDir = "${projectDir}/server"
+    installDir = "${buildDir}/install/${project.name}-server"
+    forgeDir = "${buildDir}/forge"
+    
+    minMemory = 10240
+    maxMemory = 12288
+}
+
+version = "0.0.1"
+
+apply from: "${minecraftDir}/forge.gradle"
+apply from: "${runDir}/multimc.gradle"
+apply from: "${runDir}/server.gradle"
+apply from: "${packDir}/config.gradle"
+apply from: "${packDir}/mods.gradle"
+apply from: "${packDir}/project.gradle"
+apply from: "${packDir}/twitch.gradle"
+
+apply from: "${gradleDir}/deploy.gradle"

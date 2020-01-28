@@ -1,0 +1,14 @@
+apply from: "${gradleDir}/repositories.gradle"
+apply plugin: 'java-base'
+
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs = ["-proc:none", "-Xlint:unchecked"]
+}
+
+tasks.withType(Exec) {
+    standardInput = System.in
+}

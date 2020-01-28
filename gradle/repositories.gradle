@@ -1,0 +1,9 @@
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    google()
+    maven { name 'sonatype'; url "https://oss.sonatype.org/content/groups/public/" }
+    maven { name 'apache'; url "https://repository.apache.org/content/groups/public/" }
+    maven { name = "JITPack"; url = "https://jitpack.io" }
+}

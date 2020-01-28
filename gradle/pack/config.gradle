@@ -1,0 +1,17 @@
+distributions {
+    config {
+        contents {
+            from (srcDir) {                
+                include 'config/**'
+                include 'resources/**'
+                include 'scripts/**'
+            }
+
+            into '/'
+        }
+    }
+}
+
+configDistTar {
+    compression = Compression.GZIP
+}

@@ -1,0 +1,1 @@
+recipes.addShapeless(<minecraft:wheat_seeds> * 3, [<minecraft:wheat>]);

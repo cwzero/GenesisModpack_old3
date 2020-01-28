@@ -1,0 +1,228 @@
+{
+  "entries": [
+    {
+      "item": "quark:marble|0",
+      "emc": 1
+    },
+    {
+      "item": "actuallyadditions:item_flax_seed|0",
+      "emc": 64
+    },
+    {
+      "item": "ironbackpacks:backpack|0",
+      "emc": 0
+    },
+    {
+      "item": "forge:bucketfilled|0",
+      "emc": 0
+    },
+    {
+      "item": "chisel:basalt2|7",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:sandstone|2",
+      "emc": 4
+    },
+    {
+      "item": "biomesoplenty:gem|5",
+      "emc": 2048
+    },
+    {
+      "item": "mysticalagriculture:soulstone|1",
+      "emc": 1
+    },
+    {
+      "item": "aroma1997sdimension:miningmultitool|0",
+      "emc": 278
+    },
+    {
+      "item": "aroma1997sdimension:portalframe|0",
+      "emc": 1
+    },
+    {
+      "item": "rustic:slate|0",
+      "emc": 1
+    },
+    {
+      "item": "chisel:limestone2|7",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:netherbrick|0",
+      "emc": 1
+    },
+    {
+      "item": "minecraft:sandstone|0",
+      "emc": 4
+    },
+    {
+      "item": "chisel:marble2|7",
+      "emc": 1
+    },
+    {
+      "item": "actuallyadditions:item_coffee_seed|0",
+      "emc": 64
+    },
+    {
+      "item": "actuallyadditions:item_misc|17",
+      "emc": 16
+    },
+    {
+      "item": "projectred-core:resource_item|105",
+      "emc": 64
+    },
+    {
+      "item": "thermalfoundation:material|135",
+      "emc": 8192
+    },
+    {
+      "item": "thermalfoundation:material|136",
+      "emc": 2048
+    },
+    {
+      "item": "quark:jasper|0",
+      "emc": 1
+    },
+    {
+      "item": "taiga:basalt_block|0",
+      "emc": 1
+    },
+    {
+      "item": "dimdoors:world_thread|0",
+      "emc": 256
+    },
+    {
+      "item": "appliedenergistics2:material|3",
+      "emc": 256
+    },
+    {
+      "item": "actuallyadditions:item_dust|4",
+      "emc": 864
+    },
+    {
+      "item": "enderio:item_material|1",
+      "emc": 1526
+    },
+    {
+      "item": "fluxnetworks:flux|0",
+      "emc": 64
+    },
+    {
+      "item": "projecte:item.pe_covalence_dust|0",
+      "emc": 1
+    },
+    {
+      "item": "integrateddynamics:crystalized_menril_chunk|0",
+      "emc": 64
+    },
+    {
+      "item": "minecraft:slime|0",
+      "emc": 288
+    },
+    {
+      "item": "thermalfoundation:material|160",
+      "emc": 512
+    },
+    {
+      "item": "thermalfoundation:tome_experience|0",
+      "emc": 0
+    },
+    {
+      "item": "xreliquary:mob_ingredient|6",
+      "emc": 192
+    },
+    {
+      "item": "xreliquary:mob_ingredient|12",
+      "emc": 96
+    },
+    {
+      "item": "xreliquary:mob_ingredient|0",
+      "emc": 720
+    },
+    {
+      "item": "xreliquary:mob_ingredient|2",
+      "emc": 256
+    },
+    {
+      "item": "xreliquary:mob_ingredient|7",
+      "emc": 3072
+    },
+    {
+      "item": "thermalfoundation:material|772",
+      "emc": 32
+    },
+    {
+      "item": "xreliquary:mob_ingredient|3",
+      "emc": 1192
+    },
+    {
+      "item": "thermalfoundation:material|1025",
+      "emc": 416
+    },
+    {
+      "item": "thermalfoundation:material|1024",
+      "emc": 355
+    },
+    {
+      "item": "immersiveengineering:seed|0",
+      "emc": 16
+    },
+    {
+      "item": "exchangers:te_exchanger_core_tier1|0",
+      "emc": 3584
+    },
+    {
+      "item": "exchangers:te_exchanger_core_tier2|0",
+      "emc": 8320
+    },
+    {
+      "item": "exchangers:te_exchanger_core_tier3|0",
+      "emc": 15232
+    },
+    {
+      "item": "extrautils2:endershard|0",
+      "emc": 128
+    },
+    {
+      "item": "extrautils2:ingredients|3",
+      "emc": 864
+    },
+    {
+      "item": "extrautils2:decorativeglass|0",
+      "emc": 1
+    },
+    {
+      "item": "xreliquary:mob_ingredient|11",
+      "emc": 3072
+    },
+    {
+      "item": "deepmoblearning:soot_covered_redstone|0",
+      "emc": 64
+    },
+    {
+      "item": "xreliquary:mob_ingredient|10",
+      "emc": 5
+    },
+    {
+      "item": "woot:controller|0",
+      "emc": 0
+    },
+    {
+      "item": "xreliquary:mob_ingredient|4",
+      "emc": 192
+    },
+    {
+      "item": "soulshardsrespawn:materials|1",
+      "emc": 1056
+    },
+    {
+      "item": "soulshardsrespawn:materials|2",
+      "emc": 49
+    },
+    {
+      "item": "soulshardsrespawn:soul_shard|0",
+      "emc": 14080
+    }
+  ]
+}

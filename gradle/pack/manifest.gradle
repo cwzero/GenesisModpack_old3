@@ -1,0 +1,64 @@
+task copyToSrc {
+    def inputManifest = file("${projectDir}/manifest.json")
+    def outputManifest = file("${srcDir}/manifest.json")
+
+    inputs.files(inputManifest)
+    outputs.files(outputManifest)
+
+    doLast {
+        def jsonSlurper = new groovy.json.JsonSlurper()
+        def manifest = jsonSlurper.parseText(inputManifest.text)
+        def mods = manifest.files
+        def json = groovy.json.JsonOutput.toJson(mods)
+
+        outputManifest.text = """
+{
+    "files": ${groovy.json.JsonOutput.prettyPrint(json)}
+}
+        """
+    }
+}
+
+task copyTwitchManifest(type: Copy) {
+  from srcDir
+  include 'manifest.json'
+  into buildDir
+}
+
+task generateTwitchManifest {
+    def inputManifest = file("${srcDir}/manifest.json")
+    def outputManifest = file("${buildDir}/manifest.json")
+    
+    buildDir.mkdirs()
+
+    inputs.files(inputManifest)
+    outputs.files(outputManifest)
+
+  doLast {
+    def jsonSlurper = new groovy.json.JsonSlurper()
+    def manifest = jsonSlurper.parseText(inputManifest.text)
+    def mods = manifest.files
+    def json = groovy.json.JsonOutput.toJson(mods)
+
+    outputManifest.text = """
+{
+  "minecraft": {
+    "version": "${minecraft.version}",
+    "modLoaders": [
+      {
+        "id": "forge-${forge.version}",
+        "primary": true
+      }
+    ]
+  },
+  "manifestType": "minecraftModpack",
+  "manifestVersion": 1,
+  "name": "${project.name}",
+  "version": "${project.version}",
+  "author": "${project.author}",
+  "files": ${groovy.json.JsonOutput.prettyPrint(json)},
+  "overrides": "overrides"
+}
+    """
+  }
+}

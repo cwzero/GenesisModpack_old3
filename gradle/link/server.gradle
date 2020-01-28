@@ -1,0 +1,28 @@
+apply from: "${gradleDir}/functions.gradle"
+apply from: "${packDir}/server.gradle"
+
+task copyServerDist(type: Copy) {
+    dependsOn installServerDist
+    from installDir
+    into serverDir
+}
+
+task linkServerDirs() {
+    dependsOn copyServerDist
+    mkdir serverDir
+
+    def dirs = [
+        'config',
+        'mods',
+        'resources',
+        'saves',
+        'scripts'
+    ]
+
+    doLast {
+        dirs.each {
+            link("${serverDir}/${it}", "${srcDir}/${it}")
+        }
+    }
+}
+installServerDist.finalizedBy linkServerDirs

@@ -1,0 +1,32 @@
+apply from: "${gradleDir}/distribution.gradle"
+apply from: "${gradleDir}/minecraft/minecraft.gradle"
+
+ext {
+    forge = [
+        major: 14,
+        minor: 23,
+        revision: 5,
+        build: 2847,
+        release: 'latest'
+    ]
+
+    forge.version = "${forge.major}.${forge.minor}.${forge.revision}.${forge.build}"
+}
+
+repositories {
+    maven {
+        name = 'Minecraft Forge'
+        url = 'https://files.minecraftforge.net/maven'
+        
+        content {
+            includeGroup 'net.minecraftforge'
+        }
+    }
+}
+
+dependencies {
+    constraints {
+        forge group: 'net.minecraftforge', name: 'forge', version: "${minecraft.version}-${forge.version}"
+    }
+    forge group: 'net.minecraftforge', name: 'forge', classifier: 'installer'
+}

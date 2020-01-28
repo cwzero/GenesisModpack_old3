@@ -1,0 +1,18 @@
+apply from: "${packDir}/packmmc.gradle"
+
+task generateBatch() {
+    dependsOn copyInstanceCfg, copyPackMmc
+
+    mkdir mmcInstanceDir
+
+    def batch = file("${mmcInstanceDir}/gradle_multimc.bat")
+
+    doLast {
+        batch.text = """
+@ECHO OFF
+start cmd /c "multimc --launch ${project.name}"
+        """
+    }
+}
+
+linkMultimcDirs.dependsOn generateBatch

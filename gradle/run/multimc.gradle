@@ -1,0 +1,7 @@
+apply from: "${packDir}/multimc.gradle"
+
+task runMultimc(type: Exec) {
+    dependsOn linkMultimcDirs
+    workingDir mmcInstanceDir
+    commandLine 'cmd', '/c', "${mmcInstanceDir}/gradle_multimc.bat"
+}

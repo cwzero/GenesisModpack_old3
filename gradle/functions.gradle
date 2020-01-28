@@ -1,0 +1,36 @@
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.Path
+
+ext.delete = { File file ->
+	for (File childFile : file.listFiles()) {
+		if (childFile.isDirectory()) {
+			delete(childFile)
+		} else {
+			if (!childFile.delete()) {
+				throw new IOException()
+			}
+		}
+	}
+ 
+	if (file.exists() && !file.delete()) {
+		throw new IOException("Could not delete " + file.path)
+	}
+}
+
+ext.link = { String link, String git ->
+    Path gitPath = Paths.get(git)
+    Path linkPath = Paths.get(link)
+
+    if (!Files.isSymbolicLink(linkPath)) {
+        delete(linkPath.toFile())
+    }
+
+    if (!gitPath.toFile().exists()) {
+        gitPath.toFile().mkdirs()
+    }
+
+    if (!linkPath.toFile().exists()) {
+        Files.createSymbolicLink(linkPath, gitPath)
+    }
+}

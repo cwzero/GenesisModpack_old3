@@ -1,0 +1,83 @@
+apply from: "${packDir}/forge.gradle"
+
+task generateServerBatch {
+    def batch = file("${buildDir}/server.bat")
+
+    batch.text = """
+@ECHO OFF
+java -Xms${minMemory}M -Xmx${maxMemory}M -jar forge-${minecraft.version}-${forge.version}-universal.jar nogui
+pause
+    """
+}
+
+task generateServerBash {
+    def bash = file("${buildDir}/server")
+
+    bash.text = """
+#!/bin/bash
+java -Xms${minMemory}M -Xmx${maxMemory}M -jar forge-${minecraft.version}-${forge.version}-universal.jar nogui
+    """
+}
+
+task generateGradleServerBash {
+    dependsOn generateServerBash
+
+    def bash = file("${buildDir}/gradle_server")
+    
+    bash.text = """
+#!/bin/bash
+cd ${serverDir}
+bash server
+    """
+}
+
+task generateGradleServerBatch {
+    dependsOn generateServerBatch
+
+    def batch = file("${buildDir}/gradle_server.bat")
+    batch.text = """
+@ECHO OFF
+start cmd /c "${serverDir}/server.bat"
+    """
+}
+
+task generateServerFiles {
+    dependsOn generateGradleServerBash, generateGradleServerBatch
+}
+
+distributions {
+    server {
+        contents {
+            from (srcDir) {                
+                include 'config/**'
+                include 'resources/**'
+                include 'scripts/**'
+            }
+
+            from (forgeDir) {
+                include 'libraries/**'
+                include '*.jar'
+            }
+
+            from (modsDir) {
+                include '**'
+                into 'mods'
+            }
+
+            from (buildDir) {
+                include 'server'
+                include 'server.bat'
+            }
+
+            into '/'
+        }
+    }
+}
+
+installServerDist.dependsOn cleanInstall, generateServerFiles
+serverDistTar.dependsOn cleanInstall, generateServerFiles
+serverDistZip.dependsOn cleanInstall, generateServerFiles
+
+serverDistTar {
+    compression = Compression.GZIP
+}

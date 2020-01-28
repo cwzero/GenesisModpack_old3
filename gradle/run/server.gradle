@@ -1,0 +1,14 @@
+apply from: "${linkDir}/server.gradle"
+
+import org.apache.tools.ant.taskdefs.condition.Os
+
+task runLocalServer(type: Exec) {
+    mustRunAfter linkServerDirs
+    dependsOn installServerDist, linkServerDirs, generateGradleServerBatch
+    workingDir serverDir
+    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+        commandLine 'cmd', '/c', "${buildDir}/gradle_server.bat"
+    } else {
+        commandLine 'bash', "${buildDir}/gradle_server"
+    }
+}

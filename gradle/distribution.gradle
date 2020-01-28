@@ -1,0 +1,6 @@
+apply from: "${gradleDir}/java-base.gradle"
+apply plugin: 'distribution'
+
+configurations {
+    forge
+}

@@ -1,0 +1,32 @@
+{
+  "recipeName": "Feather Falling 1",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "book"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "feather"
+    },
+    "count": 8,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:2}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 7,
+  "showRecipe": true
+}

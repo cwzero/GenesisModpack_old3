@@ -1,0 +1,9 @@
+ext {    
+    minecraft = [
+        major: 1,
+        minor: 12,
+        revision: 2
+    ]
+
+    minecraft.version = "${minecraft.major}.${minecraft.minor}.${minecraft.revision}"
+}

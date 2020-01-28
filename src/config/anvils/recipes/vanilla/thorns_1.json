@@ -1,0 +1,35 @@
+{
+  "recipeName": "Thorns 1",
+  "anvilLeft": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:0}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilRight": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "cactus"
+    },
+    "count": 6,
+    "meta": 0
+  },
+  "anvilOutput": {
+    "registry": {
+      "domain": "minecraft",
+      "path": "enchanted_book"
+    },
+    "nbt": {
+      "data": "{StoredEnchantments:[{lvl:1s,id:7}]}"
+    },
+    "count": 1,
+    "meta": 0
+  },
+  "anvilLevelCost": 5,
+  "showRecipe": true
+}

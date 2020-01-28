@@ -1,0 +1,28 @@
+distributions {
+    project {
+        contents {
+            from (projectDir) {
+                from (srcDir) {
+                    include 'config'
+                    include 'resources'
+                    include 'scripts'
+                    include 'manifest.json'
+                    into 'src'
+                }
+
+                include 'gradle/'
+                exclude '.gradle/'
+                include '.gitignore'
+                include '*.gradle'
+                include 'gradlew'
+                include 'gradlew.bat'
+
+                into '/'
+            }
+        }
+    }
+}
+
+projectDistTar {
+    compression = Compression.GZIP
+}
