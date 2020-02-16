@@ -23,6 +23,7 @@ task linkMultimcDirs() {
 
     doLast {
         dirs.each {
+            println("Linking ${mmcMcDir}/${it}")
             link("${mmcMcDir}/${it}", "${srcDir}/${it}")
         }
     }

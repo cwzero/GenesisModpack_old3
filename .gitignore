@@ -104,3 +104,6 @@ gradle-app.setting
 
 /manifest.json
 /modlist.html
+
+/src/mods/
+/src/saves/
